@@ -8,7 +8,7 @@ import { Product } from '../interfaces/product';
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:4700/product';
+   baseUrl = 'http://localhost:4700/product';
 
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -25,7 +25,6 @@ export class ProductService {
   }
 
 
-  // Service method without the productCategory parameter
 getProductsCategories(): Observable<any> {
   return this.http.get(`${this.baseUrl}/allProducts`, { headers: this.headers });
 }
@@ -61,6 +60,6 @@ getProductsCategories(): Observable<any> {
     const url = `${this.baseUrl}/allProducts/${productCategory}`;
     return this.http.get<Product[]>(url);
   }
-  
+
 
 }
