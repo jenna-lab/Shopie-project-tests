@@ -60,7 +60,7 @@ describe('UserService', () => {
   it('should check user details', () => {
     const mockRole = 'admin';
 
-spyOn(authService, 'getUserDetails').and.returnValue(of(mockUserDetails));
+// spyOn(authService, 'getUserDetails').and.returnValue(of(mockRole));
 
 
 
@@ -126,7 +126,17 @@ spyOn(authService, 'getUserDetails').and.returnValue(of(mockUserDetails));
   });
 
   it('should get products', () => {
-    const mockProducts: Product[] = [{ id: '1', name: 'Product1' }];
+    const mockProducts: Product[] = [{
+      productId: '1',
+      productName: 'Product 1',
+      productDescription: 'This is a test product',
+      productCost: 10,
+      productImg: 'product1.jpg',
+     productCategory: 'electronics',
+      productClassification: 'test',
+      earlyCost: 10,
+      userId: '1',
+  }];
 
     userService.getProducts().subscribe((products) => {
       expect(products).toEqual(mockProducts);

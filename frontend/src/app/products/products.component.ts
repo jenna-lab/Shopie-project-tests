@@ -13,7 +13,7 @@ import { Product } from '../interfaces/product';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   products: any[] = [];
   showNavbar: boolean = true;
   productCategories: string[] = [];
